@@ -51,7 +51,7 @@ const Dashboard: React.FC = () => {
                   </dt>
                   <dd>
                     <div className="text-lg font-medium text-gray-900">
-                      2023 Tax Year
+                      2024 Tax Year
                     </div>
                   </dd>
                 </dl>
@@ -169,14 +169,14 @@ const Dashboard: React.FC = () => {
             Important Tax Dates
           </h3>
           <p className="mt-1 max-w-2xl text-sm text-gray-500">
-            Keep track of these key deadlines for the 2023 tax year.
+            Keep track of these key deadlines for the 2024 tax year.
           </p>
         </div>
         <div className="border-t border-gray-200">
           <dl>
             <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
-                April 30, 2024
+                April 30, 2025
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 Deadline for filing individual tax returns
@@ -184,7 +184,7 @@ const Dashboard: React.FC = () => {
             </div>
             <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
-                June 15, 2024
+                June 15, 2025
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 Deadline for self-employed individuals
@@ -192,10 +192,10 @@ const Dashboard: React.FC = () => {
             </div>
             <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-500">
-                March 1, 2024
+                March 1, 2025
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                RRSP contribution deadline for 2023 tax year
+                RRSP contribution deadline for 2024 tax year
               </dd>
             </div>
           </dl>

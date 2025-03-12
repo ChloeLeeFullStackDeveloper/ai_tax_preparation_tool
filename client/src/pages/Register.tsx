@@ -48,11 +48,11 @@ const Register: React.FC = () => {
     try {
       setIsLoading(true);
       setAuthError(null);
+      console.log("Attempting to register with:", data.email);
       await registerUser(data.email, data.password, data.name);
       navigate("/");
     } catch (error: any) {
       console.error("Registration error:", error);
-      // Handle specific Firebase auth errors
       if (error.code === "auth/email-already-in-use") {
         setAuthError("This email is already in use");
       } else if (error.code === "auth/invalid-email") {
@@ -60,7 +60,7 @@ const Register: React.FC = () => {
       } else if (error.code === "auth/weak-password") {
         setAuthError("Password is too weak");
       } else {
-        setAuthError("Failed to create an account. Please try again.");
+        setAuthError(`Failed to create an account: ${error.message}`);
       }
     } finally {
       setIsLoading(false);
