@@ -1,16 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { firebaseAdmin } from '../firebase.config';
+import { FirebaseService } from '../firebase/firebase.service';
 
 @Injectable()
 export class TaxService {
+  constructor(private firebaseService: FirebaseService) {}
+
   async saveTaxData(userId: string, taxData: any) {
     try {
-      const db = firebaseAdmin.firestore();
-      const docRef = await db.collection('tax-returns').add({
-        userId,
-        ...taxData,
-        createdAt: new Date(),
-      });
+      const docRef = await this.firebaseService.firestore
+        .collection('tax-returns')
+        .add({
+          userId,
+          ...taxData,
+          createdAt: new Date(),
+        });
 
       return { id: docRef.id, ...taxData };
     } catch (error) {

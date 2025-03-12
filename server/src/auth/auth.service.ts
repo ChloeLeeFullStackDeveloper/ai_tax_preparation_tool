@@ -1,11 +1,13 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { firebaseAdmin } from '../firebase.config';
+import { FirebaseService } from '../firebase/firebase.service';
 
 @Injectable()
 export class AuthService {
+  constructor(private firebaseService: FirebaseService) {}
+
   async validateToken(token: string) {
     try {
-      const decodedToken = await firebaseAdmin.auth().verifyIdToken(token);
+      const decodedToken = await this.firebaseService.auth.verifyIdToken(token);
       return decodedToken;
     } catch (error) {
       throw new UnauthorizedException('Invalid token');
@@ -14,7 +16,7 @@ export class AuthService {
 
   async getUserData(uid: string) {
     try {
-      const user = await firebaseAdmin.auth().getUser(uid);
+      const user = await this.firebaseService.auth.getUser(uid);
       return user;
     } catch (error) {
       throw new UnauthorizedException('User not found');
